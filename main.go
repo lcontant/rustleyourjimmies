@@ -47,6 +47,6 @@ func main() {
 	init_expression_data()
 	http.Handle("/files/", http.StripPrefix("/files/", http.FileServer(http.Dir(""))))
 	http.HandleFunc("/home", rustle_my_jimmies)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServeTLS(":4443","server.crt" , "server.key",nil))
 }
 
