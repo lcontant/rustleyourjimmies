@@ -30,7 +30,7 @@ func main() {
 	expression_generator = ExpressionGenerator{}
 	expression_generator.init_expression_data()
 	http.Handle("/files/", http.StripPrefix("/files/", http.FileServer(http.Dir(""))))
-	http.HandleFunc("/home", rustle_my_jimmies)
+	http.HandleFunc("/", rustle_my_jimmies)
 	log.Fatal(http.ListenAndServeTLS(":4443","server.crt" , "server.key",nil))
 }
 
