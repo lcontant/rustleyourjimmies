@@ -7,9 +7,6 @@ import (
 	"net/http"
 )
 
-type ExpressionData struct {
-	Expression string
-}
 func check(e error) {
 	if e != nil {
 		panic(e)
@@ -25,8 +22,10 @@ func get_html_from_file(filename string) string {
 func rustle_my_jimmies(w http.ResponseWriter, r *http.Request) {
 	base_html := get_html_from_file("index.html")
 	t, err := template.New("test").Parse(base_html)
+	query_verb := r.URL.Query().Get("verb")
+	query_word := r.URL.Query().Get("noun")
 	check(err)
-	expressionData := ExpressionData{expression_generator.generateExpression()}
+	expressionData := expression_generator.generateExpression(query_verb, query_word)
 	t.ExecuteTemplate(w, "test", expressionData )
 }
 

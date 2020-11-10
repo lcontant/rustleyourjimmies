@@ -16,6 +16,14 @@
     top: 47%;
     z-index: -1;
 }
+.button {
+    font-size: 20px;
+}
+
+.share-section {
+    display: flex;
+}
+
 body {
     background: black;
     overflow-y: hidden;

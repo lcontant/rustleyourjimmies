@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="/files/index.css">
+    <script src="/files/copy.js"></script>
     <title>Rustle your jimmies</title>
     <meta property="og:title" content="Rustle your jimmies" />
     <meta property="og:url" content="https://www.rustleyourjimmies.com/" />
@@ -10,6 +11,10 @@
     <meta property="og:image" content="/files/jimmies.jpg" />
 </head>
 <body>
+<div class="share-section">
+    <input type="text" contenteditable="false" value="https://www.rustleyourjimmies.com/?verb={{.Verb}}&noun={{.Noun}}">
+    <button class="share button" id="share" onclick="copy({{.Verb}}, {{.Noun}})"><img src="/files/share.svg" height="15px"></button>
+</div>
 <div>
     <img src="/files/jimmies.jpg" class="jimmies picture">
     <span class="title">{{.Expression}}</span>
