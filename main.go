@@ -6,6 +6,10 @@ import (
 	"log"
 	"net/http"
 )
+
+type ExpressionData struct {
+	Expression string
+}
 func check(e error) {
 	if e != nil {
 		panic(e)
@@ -22,7 +26,8 @@ func rustle_my_jimmies(w http.ResponseWriter, r *http.Request) {
 	base_html := get_html_from_file("index.html")
 	t, err := template.New("test").Parse(base_html)
 	check(err)
-	t.ExecuteTemplate(w, "test", expression_generator.generateExpression())
+	expressionData := ExpressionData{expression_generator.generateExpression()}
+	t.ExecuteTemplate(w, "test", expressionData )
 }
 
 
