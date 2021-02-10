@@ -24,7 +24,17 @@
     display: flex;
 }
 
+.resume-link {
+    margin-left: 20px;
+    color: white;
+}
+
 body {
     background: black;
     overflow-y: hidden;
+    font-family: Consolas,monaco,monospace;
+}
+
+a {
+    color: #84bcff;
 }
