@@ -186,6 +186,7 @@ plagues
 plies
 plumes
 pokes
+poops
 pores
 prates
 pries
